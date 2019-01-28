@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navigation-bar {
+    padding: 25px 50px;
+}
+
+.nav-img {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Z4bbzyA-oFGoItArYsgeGI65x5TfbNAbKrCdY33uUFP9Pv4tvw");
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 50%;
+    margin-top: 10px;
+}
+
+.nav-list li {
+    list-style: none;
+    float: left;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 16px;
+    vertical-align: top; /* --> не работает */
+    color:  #e84a64;
+    padding: 0 15px;
+}
+
+.clearfix {
+    clear: left;
+}
+
+.header {
+    margin: 7% 25% 14% 35%; /* ---> через относительное позиционирование некрасиво получается */
+    font-size: 40px;
+    line-height: 40px;
+    color: rgb(12, 67, 75);
+    font-weight: normal; /* --> не работает */
+}
+
+a, .header {
+    text-transform: capitalize;
+}
+
+/* .content { */
+    /* font-size: 250px; --> чтобы между блоками и краями экрана с обоих боков было равное растояние, 
+    можно задать значение в 250px, но в задании видна небольшая разница между растоянием слева от экрана 
+    и справа. По этому: */
+    /* font-size: 200px; 
+    background: rgb(12, 67, 75);
+    padding: 60px 50px;
+}  */
+
+/* .img {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Z4bbzyA-oFGoItArYsgeGI65x5TfbNAbKrCdY33uUFP9Pv4tvw");
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+} */
+
+/* .content>.img {
+    display: inline-block;
+} */
+
+.content {
+    background: rgb(12, 67, 75);
+    padding: 60px 50px;
+}
+p { /* ДЛЯ ТОГО, ЧТОБЫ ПРИ FLOAT СРАБОТАЛИ ОТСТУПЫ МЕЖДУ КАРТИНКАМИ, КОТОРЫЕ В КАЧЕСТВЕ BACKGROUND-IMAGE, ПОМЕЩАЕМ КОНТЕЙНЕР (p) В КОНТЕЙНЕР (div) */
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Z4bbzyA-oFGoItArYsgeGI65x5TfbNAbKrCdY33uUFP9Pv4tvw");
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+}
+
+.content>.img {
+    float: left;
+    padding: 20px;
+}
+
+/* А лучше было бы реализовать, поместив картинки (<img>) в контейнер, которому задать размер 33,33333%, 
+а ширину картинок задать, как 100% ---> в таком случае, при разных разрешениях экрана, 
+размеры будут "адаптироваться" под данный конкретный */
+
+.menu {
+    width: 400px;
+    height: 350px;
+    position: fixed;
+    /* bottom: 20px; --> чтобы плавающая менюшка была так, как на скриншоте,
+    right: 60px; --> прописываю свои значения для позиционирования =) */
+    bottom: 25px;
+    /* right: 150px; */
+    right: 120px;
+    background: rgba(255, 255, 255, 0.925);
+    border-radius: 4px;
+    padding: 0;
+}
+
+.menu>li {
+    list-style: none;
+}
+
+.menu>.has-border-bottom {
+    border-bottom: 1px solid #eff2f6;
+}
+
+.menu>li>a {
+    color: #e84a64;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 69px;
+    padding: 25px;
+}
+
+.menu>li>a:hover {
+    color: limegreen;
+}
+
+.lnr-cross {
+    color: #e84a64;
+    font-size: 20px;
+}
+
+.menu .esc-button {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+}
